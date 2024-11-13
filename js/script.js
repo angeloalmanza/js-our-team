@@ -56,9 +56,15 @@ const teamMembers = [
 
 // Prelevo i valori dall'html
 const row = document.getElementById("team-row");
+const memberForm = document.getElementById("member-form");
+
+const nameInput = document.getElementById("name");
+const roleInput = document.getElementById("role");
+const imageInput = document.getElementById("image");
+const emailInput = document.getElementById("email");
 
 /**
- * Description
+ * Funzione che crea dinamicamente le card 
  * @param {object} member
  * @returns {string}
  */
@@ -82,6 +88,7 @@ const createCard = (members) => {
 };
 
 
+/** funzione che mostra le card in pagina */
 const renderTeam = () => {
   let rowItems = "";
   for (let i = 0; i < teamMembers.length; i++) {
@@ -91,5 +98,31 @@ const renderTeam = () => {
   row.innerHTML = rowItems;
 };
 
-// Chiamata funzione
+
+/** funzione che aggiunge una nuova card */
+const handleSubmit = (event) => {
+  event.preventDefault();
+
+  const name = nameInput.value.trim();
+  const role = roleInput.value.trim();
+  const img = imageInput.value.trim();  
+  const email = emailInput.value.trim();  
+
+  const newMember = {
+    name,
+    role,
+    img,
+    email
+  }
+
+  teamMembers.push(newMember);
+
+  row.innerHTML += createCard(newMember);
+
+  memberForm.reset();
+};
+
+// Chiamate funzioni
 renderTeam();
+
+memberForm.addEventListener("submit", handleSubmit);

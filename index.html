@@ -22,6 +22,7 @@
             stampa di prova 
         </ul> -->
 
+        <!-- Container per le card -->
         <div class="team-container">
             <div id="team-row" class="row">
                 <!-- <div class="col-12 col-md-6 col-lg-4">
@@ -39,6 +40,26 @@
             </div>
         </div>
     </div>
+
+    <!-- Sezione per il form -->
+    <section class="form-container">
+        <h2>Add Team Member</h2>
+        <form id="member-form">
+          <div>
+            <input type="text" id="name" placeholder="Nome completo" required autocomplete="off">
+          </div>
+          <div>
+            <input type="text" id="role" placeholder="Ruolo" required autocomplete="off">
+          </div>
+          <div>
+            <input type="text" id="email" placeholder="Email" required autocomplete="off">
+          </div>
+          <div>
+            <input type="text" id="image" placeholder="Url dell'immagine" required autocomplete="off">
+          </div>
+          <button type="submit" class="btn btn-primary">Aggiungi membro</button>
+        </form>
+      </section>
     
     <script src="./js/script.js"></script>
 </body>
