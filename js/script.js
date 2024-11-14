@@ -73,11 +73,11 @@ const createCard = (members) => {
   const { name, role, email, img } = members;
   return `
       <div class="col-12 col-md-6 col-lg-4">
-        <div class="team-card d-flex align-items-center mb-5">
+        <div class="team-card">
           <div class="card-image">
             <img src="./${img}" alt="${name}"/>
           </div>
-          <div class="card-text bg-dark">
+          <div class="card-text">
             <h3 class="text-white">${name}</h3>
             <p class="text-white">${role}</p>
             <a href="">${email}</a>
